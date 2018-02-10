@@ -1,29 +1,12 @@
-This folder contains an example of use of the [WholeBodyInterface (WBI)](https://github.com/robotology/wholebodyinterface).
+This tutorial contains a controller example which exploits [WB-Toolbox](https://github.com/robotology/WB-Toolbox).
 
-To install the dependencies please use the [Codyco superbuild](https://github.com/robotology/codyco-superbuild).
-
-Any issues related to the use of the WBI should be opened in the respective repository (either [here](https://github.com/robotology/wholebodyinterface/issues) or [here](https://github.com/robotology/yarp-wholebodyinterface/issues)).
-
-
-###Running the example
-
-This example shows a simple use of the whole body interface.
 It implements a PD plus gravity compensation (which in its nature is quite generic), but references are targeted to the iCub robot.
 
-The folder also contains the urdf model of iCub and a configuration file to use the wbi with the model.
-This has been done to make this module independent from the configuration files shipped in the codyco-superbuild, but it is not meant to be used as a real-world scenario module.
+### Running the example
 
-Once you compiled the example
+1. Open Matlab, browse the directory containing this repository, open the `impedance_control.mdl` file.
+2. Execute `yarpserver`
+3. Open `gazebo -s libgazebo_yarp_clock.so` and drop the `iCubGazeboV2_5 fixed` model.
+4. On Simulink, press Play.
 
-```
-mkdir build
-cd build
-cmake ..
-make
-```
-
-you can launch it by specifying the configuration files:
-
-```
-./build/WBI_example --wbi_config_file wbi-config.ini
-```
+The controller is now launched and the robot get controlled in torque for all the time the controller is running.
