@@ -10,3 +10,7 @@ It implements a PD plus gravity compensation (which in its nature is quite gener
 4. On Simulink, press Play.
 
 The controller is now launched and the robot get controlled in torque for all the time the controller is running.
+
+#### Troubleshooting
+
+If you face any problem, have a look at this [README.md file](https://github.com/robotology/WB-Toolbox).
